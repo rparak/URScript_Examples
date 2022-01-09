@@ -15,7 +15,7 @@ Universal Robots Polyscope
 
 **Description:**
 
-Text ..
+A simple program to demonstrate circular motion. 
 
 **Universal Robots UR10e - Simulation:**
 <p align="center">
