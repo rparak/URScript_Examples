@@ -13,6 +13,10 @@ Universal Robots Polyscope
 
 ## Circular Motion:
 
+**Description:**
+
+Text ..
+
 **Universal Robots UR10e - Simulation:**
 <p align="center">
  <img src="https://github.com/rparak/URScript_Examples/blob/main/images/move_circle_ursim.PNG" width="600" height="400">
@@ -41,6 +45,10 @@ Universal Robots Polyscope
 ```
 
 ## Modular Pick & Place:
+
+**Description:**
+
+Text ..
 
 **Universal Robots UR10e:**
 <p align="center">
