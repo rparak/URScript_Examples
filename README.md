@@ -50,11 +50,11 @@ The program was tested with Universal Robots UR10e robot (on the latest version 
 
 **Description:**
 
-A simple program to demonstrate a modular pick and place application. The user selects the initialization position, number of objects and mode. The application mode can be inverse or non-inverse. Inverse mode means that the robot moves cyclically and transfers objects from side to side. The non-inverse mode just transfers the objects to the final position.
+A simple program to demonstrate a modular pick and place application. The user selects the initialization position (Waypoint_Home), number of objects (v_count_of_obj), mode (v_inv_mode), etc. The application mode can be inverse or non-inverse. Inverse mode means that the robot moves cyclically and transfers objects from side to side. The non-inverse mode just transfers the objects to the final position.
 
 This application can be used as a demonstration for beginners, kids, etc. to show how easy it is to program a collaborative robot.
 
-The program was tested with Universal Robots UR10e robot (on the latest version of URSim). 
+The program was tested with Universal Robots UR10e robot and Robotiq gripper (on the latest version of URSim). 
 
 **Universal Robots UR10e:**
 <p align="center">
