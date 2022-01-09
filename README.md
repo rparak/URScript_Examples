@@ -17,6 +17,8 @@ Universal Robots Polyscope
 
 A simple program to demonstrate circular motion. The user selects the initialization position (Waipoint_Home) and the radius (v_radius) in meters. Then just run the program.
 
+The program was tested with Universal Robots UR10e robot (on the latest version of URSim). 
+
 **Universal Robots UR10e - Simulation:**
 <p align="center">
  <img src="https://github.com/rparak/URScript_Examples/blob/main/images/move_circle_ursim.PNG" width="600" height="400">
@@ -48,7 +50,11 @@ A simple program to demonstrate circular motion. The user selects the initializa
 
 **Description:**
 
-Text ..
+A simple program to demonstrate a modular pick and place application. The user selects the initialization position, number of objects and mode. The application mode can be inverse or non-inverse. Inverse mode means that the robot moves cyclically and transfers objects from side to side. The non-inverse mode just transfers the objects to the final position.
+
+This application can be used as a demonstration for beginners, kids, etc. to show how easy it is to program a collaborative robot.
+
+The program was tested with Universal Robots UR10e robot (on the latest version of URSim). 
 
 **Universal Robots UR10e:**
 <p align="center">
