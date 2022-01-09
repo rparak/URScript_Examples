@@ -41,7 +41,7 @@ Universal Robots Polyscope
 
 **Universal Robots UR10e:**
 <p align="center">
- <img src="https://github.com/rparak/URScript_Examples/blob/main/images/pick_and_place_rw.png" width="800" height="450">
+ <img src="https://github.com/rparak/URScript_Examples/blob/main/images/pick_and_place_rw.png" width="600" height="450">
 </p>
 
 **Universal Robots UR10e - Simulation:**
