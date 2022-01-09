@@ -11,9 +11,9 @@ Universal Robots Polyscope
 | -------------------------- | ------------------------------------------------------------------------------------- |
 | Universal Robots Polyscope | https://www.universal-robots.com/download/                                            |
 
-## Application:
+## Circular Motion:
 
-**Circular Motion ():**
+**URScript Code:**
 ```bash
  Program
    BeforeStart
@@ -35,7 +35,9 @@ Universal Robots Polyscope
          v_point_1
 ```
 
-**Modular Pick & Place ():**
+## Modular Pick & Place:
+
+**URScript Code:**
 ```bash
  Program
    BeforeStart
