@@ -11,9 +11,11 @@ Universal Robots Polyscope
 | -------------------------- | ------------------------------------------------------------------------------------- |
 | Universal Robots Polyscope | https://www.universal-robots.com/download/                                            |
 
-## Application:
+## Circular Motion:
 
-**Circular Motion ():**
+**Universal Robots UR10e - Simulation:**
+
+**URScript Code:**
 ```bash
  Program
    BeforeStart
@@ -35,7 +37,16 @@ Universal Robots Polyscope
          v_point_1
 ```
 
-**Modular Pick & Place ():**
+## Modular Pick & Place:
+
+**Universal Robots UR10e:**
+<p align="center">
+ <img src="https://github.com/rparak/URScript_Examples/blob/main/images/pick_and_place_rw.png" width="600" height="450">
+</p>
+
+**Universal Robots UR10e - Simulation:**
+
+**URScript Code:**
 ```bash
  Program
    BeforeStart
