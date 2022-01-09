@@ -17,7 +17,7 @@ Universal Robots Polyscope
 
 A simple program to demonstrate circular motion. The user selects the initialization position (Waipoint_Home) and the radius (v_radius) in meters. Then just run the program.
 
-The program was tested with Universal Robots UR10e robot (on the latest version of URSim). 
+The program was tested with Universal Robots UR10e robot (on the latest version of UR Polyscope). 
 
 **Universal Robots UR10e - Simulation:**
 <p align="center">
@@ -54,7 +54,7 @@ A simple program to demonstrate a modular pick and place application. The user s
 
 This application can be used as a demonstration for beginners, kids, etc. to show how easy it is to program a collaborative robot.
 
-The program was tested with Universal Robots UR10e robot and Robotiq gripper (on the latest version of URSim). 
+The program was tested with Universal Robots UR10e robot and Robotiq gripper (on the latest version of UR Polyscope). 
 
 **Universal Robots UR10e:**
 <p align="center">
