@@ -14,6 +14,9 @@ Universal Robots Polyscope
 ## Circular Motion:
 
 **Universal Robots UR10e - Simulation:**
+<p align="center">
+ <img src="https://github.com/rparak/URScript_Examples/blob/main/images/move_circle_ursim.PNG" width="800" height="450">
+</p>
 
 **URScript Code:**
 ```bash
@@ -45,6 +48,9 @@ Universal Robots Polyscope
 </p>
 
 **Universal Robots UR10e - Simulation:**
+<p align="center">
+ <img src="https://github.com/rparak/URScript_Examples/blob/main/images/pick_and_place_ursim.PNG" width="800" height="450">
+</p>
 
 **URScript Code:**
 ```bash
