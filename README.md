@@ -15,7 +15,7 @@ Universal Robots Polyscope
 
 **Description:**
 
-A simple program to demonstrate circular motion. 
+A simple program to demonstrate circular motion. The user selects the initialization position (Waipoint_Home) and the radius (v_radius) in meters. Then just run the program.
 
 **Universal Robots UR10e - Simulation:**
 <p align="center">
