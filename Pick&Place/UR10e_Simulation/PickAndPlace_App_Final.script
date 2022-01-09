@@ -1,0 +1,182 @@
+def PickAndPlace_App_Final():
+  set_tcp(p[0.0,0.0,0.0,0.0,0.0,0.0])
+  step_count_98df634a_edb6_414d_8b2e_b2342ddd2dbc = 0.0
+  thread Step_Counter_Thread_02a48e0e_e4e8_4c2e_82b0_a61263e6b288():
+    while (True):
+      step_count_98df634a_edb6_414d_8b2e_b2342ddd2dbc = step_count_98df634a_edb6_414d_8b2e_b2342ddd2dbc + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_02a48e0e_e4e8_4c2e_82b0_a61263e6b288()
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_gravity([0.0, 0.0, 9.82])
+  set_target_payload(0.000000, [0.000000, 0.000000, 0.000000], [0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000])
+  set_safety_mode_transition_hardness(1)
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  global Waypoint_Home_p=p[-.000000000000, -.700000000000, .600000000000, .068667031305, 3.139237750913, .000437121224]
+  global Waypoint_Home_q=[-1.3192269400543033, -1.5578632957347374, -1.7185361050512036, -1.4351339409541515, 1.5671301010941274, 0.294608884698696]
+  global Point_Pick_p=p[-.211195794335, -.900851988140, .450636752216, -.682102840823, 3.063915217457, .011005112250]
+  global Point_Pick_q=[-1.611267391835348, -1.9838839970030726, -1.4669619798660278, -1.2683077913573761, 1.566598653793335, -0.48030025163759404]
+  global Point_Place_p=p[.202304906780, -.681495464890, .430682380224, .519912926073, 3.097160926247, .036151018366]
+  global Point_Place_q=[-1.0368393103228968, -1.6598488293089808, -1.918734073638916, -1.1501744550517579, 1.5813071727752686, 0.8644533157348633]
+  $ 1 "BeforeStart"
+  $ 2 "v_count_of_obj≔3"
+  global v_count_of_obj=3
+  $ 3 "v_obj_height≔0.030"
+  global v_obj_height=0.030
+  $ 4 "v_actual_state≔1"
+  global v_actual_state=1
+  $ 5 "v_inv_mode≔ False "
+  global v_inv_mode=  False  
+  $ 6 "v_counter≔0"
+  global v_counter=0
+  $ 7 "v_pick_offset≔p[0.0,0.0,0.0,0.0,0.0,0.0]"
+  global v_pick_offset=p[0.0,0.0,0.0,0.0,0.0,0.0]
+  $ 8 "v_place_offset≔p[0.0,0.0,0.0,0.0,0.0,0.0]"
+  global v_place_offset=p[0.0,0.0,0.0,0.0,0.0,0.0]
+  $ 9 "v_pick_z≔0.2"
+  global v_pick_z=0.2
+  $ 10 "v_place_z≔0.2"
+  global v_place_z=0.2
+  $ 11 "Point_Place[2]=0.415+v_place_z"
+  Point_Place_p[2]=0.415+v_place_z
+  $ 12 "Point_Pick[2]=0.415+v_pick_z"
+  Point_Pick_p[2]=0.415+v_pick_z
+  $ 13 "v_rpy_vec_pick≔rotvec2rpy([Point_Pick[3],Point_Pick[4],Point_Pick[5]])"
+  global v_rpy_vec_pick=rotvec2rpy([Point_Pick_p[3],Point_Pick_p[4],Point_Pick_p[5]])
+  $ 14 "v_rot_vec_pick≔rpy2rotvec([3.142,0.0,v_rpy_vec_pick[2]])"
+  global v_rot_vec_pick=rpy2rotvec([3.142,0.0,v_rpy_vec_pick[2]])
+  $ 15 "Point_Pick[3]=v_rot_vec_pick[0]"
+  Point_Pick_p[3]=v_rot_vec_pick[0]
+  $ 16 "Point_Pick[4]=v_rot_vec_pick[1]"
+  Point_Pick_p[4]=v_rot_vec_pick[1]
+  $ 17 "Point_Pick[5]=v_rot_vec_pick[2]"
+  Point_Pick_p[5]=v_rot_vec_pick[2]
+  $ 18 "v_rpy_vec_place≔rotvec2rpy([Point_Place[3],Point_Place[4],Point_Place[5]])"
+  global v_rpy_vec_place=rotvec2rpy([Point_Place_p[3],Point_Place_p[4],Point_Place_p[5]])
+  $ 19 "v_rot_vec_place≔rpy2rotvec([3.142,0.0,v_rpy_vec_place[2]])"
+  global v_rot_vec_place=rpy2rotvec([3.142,0.0,v_rpy_vec_place[2]])
+  $ 20 "Point_Place[3]=v_rot_vec_place[0]"
+  Point_Place_p[3]=v_rot_vec_place[0]
+  $ 21 "Point_Place[4]=v_rot_vec_place[1]"
+  Point_Place_p[4]=v_rot_vec_place[1]
+  $ 22 "Point_Place[5]=v_rot_vec_place[2]"
+  Point_Place_p[5]=v_rot_vec_place[2]
+  $ 23 "MoveJ"
+  $ 24 "Waypoint_Home" "breakAfter"
+  movej(get_inverse_kin(Waypoint_Home_p, qnear=Waypoint_Home_q), a=0.6981317007977318, v=0.3490658503988659)
+  while (True):
+    $ 25 "Robot Program"
+    $ 26 "Switch v_actual_state"
+    switch_1 = v_actual_state
+    $ 27 "Case 1"
+    if (1 == switch_1):
+      $ 28 "If v_inv_mode== True "
+      if (v_inv_mode==  True  ):
+        $ 29 "v_actual_state≔3"
+        global v_actual_state=3
+      else:
+        $ 30 "Else" "noBreak"
+        $ 31 "v_actual_state≔2"
+        global v_actual_state=2
+      end
+    elif (2 == switch_1):
+      $ 32 "Case 2"
+      $ 33 "If v_counter<v_count_of_obj"
+      if (v_counter<v_count_of_obj):
+        $ 34 "MoveL"
+        $ 35 "Point_Pick" "breakAfter"
+        movel(Point_Pick_p, a=0.5, v=0.1)
+        $ 36 "v_pick_offset≔pose_trans(Point_Pick, p[0.0,0.0,v_pick_z-((v_count_of_obj-(v_counter+1))*v_obj_height),0.0,0.0,0.0])"
+        global v_pick_offset=pose_trans(Point_Pick_p, p[0.0,0.0,v_pick_z-((v_count_of_obj-(v_counter+1))*v_obj_height),0.0,0.0,0.0])
+        $ 37 "v_pick_offset" "breakAfter"
+        movel(v_pick_offset, a=0.5, v=0.1)
+        $ 38 "Point_Pick" "breakAfter"
+        movel(Point_Pick_p, a=0.5, v=0.1)
+        $ 39 "Point_Place" "breakAfter"
+        movel(Point_Place_p, a=0.5, v=0.1)
+        $ 40 "v_place_offset≔pose_trans(Point_Place, p[0.0,0.0,v_place_z-(v_counter*v_obj_height),0.0,0.0,0.0])"
+        global v_place_offset=pose_trans(Point_Place_p, p[0.0,0.0,v_place_z-(v_counter*v_obj_height),0.0,0.0,0.0])
+        $ 41 "v_place_offset" "breakAfter"
+        movel(v_place_offset, a=0.5, v=0.1)
+        $ 42 "Point_Place" "breakAfter"
+        movel(Point_Place_p, a=0.5, v=0.1)
+        $ 43 "v_counter=v_counter+1"
+        v_counter=v_counter+1
+      else:
+        $ 44 "Else" "noBreak"
+        $ 45 "MoveJ"
+        $ 46 "Waypoint_Home" "breakAfter"
+        movej(get_inverse_kin(Waypoint_Home_p, qnear=Waypoint_Home_q), a=0.6981317007977318, v=0.3490658503988659)
+        $ 47 "Halt"
+        halt
+      end
+    elif (3 == switch_1):
+      $ 48 "Case 3"
+      $ 49 "If v_counter<v_count_of_obj"
+      if (v_counter<v_count_of_obj):
+        $ 50 "MoveL"
+        $ 51 "Point_Pick" "breakAfter"
+        movel(Point_Pick_p, a=0.5, v=0.1)
+        $ 52 "v_pick_offset≔pose_trans(Point_Pick, p[0.0,0.0,v_pick_z-((v_count_of_obj-(v_counter+1))*v_obj_height),0.0,0.0,0.0])"
+        global v_pick_offset=pose_trans(Point_Pick_p, p[0.0,0.0,v_pick_z-((v_count_of_obj-(v_counter+1))*v_obj_height),0.0,0.0,0.0])
+        $ 53 "v_pick_offset" "breakAfter"
+        movel(v_pick_offset, a=0.5, v=0.1)
+        $ 54 "Point_Pick" "breakAfter"
+        movel(Point_Pick_p, a=0.5, v=0.1)
+        $ 55 "Point_Place" "breakAfter"
+        movel(Point_Place_p, a=0.5, v=0.1)
+        $ 56 "v_place_offset≔pose_trans(Point_Place, p[0.0,0.0,v_place_z-(v_counter*v_obj_height),0.0,0.0,0.0])"
+        global v_place_offset=pose_trans(Point_Place_p, p[0.0,0.0,v_place_z-(v_counter*v_obj_height),0.0,0.0,0.0])
+        $ 57 "v_place_offset" "breakAfter"
+        movel(v_place_offset, a=0.5, v=0.1)
+        $ 58 "Point_Place" "breakAfter"
+        movel(Point_Place_p, a=0.5, v=0.1)
+        $ 59 "v_counter=v_counter+1"
+        v_counter=v_counter+1
+      else:
+        $ 60 "Else" "noBreak"
+        $ 61 "v_actual_state≔4"
+        global v_actual_state=4
+      end
+    elif (4 == switch_1):
+      $ 62 "Case 4"
+      $ 63 "If v_counter>0"
+      if (v_counter>0):
+        $ 64 "MoveL"
+        $ 65 "Point_Place" "breakAfter"
+        movel(Point_Place_p, a=0.5, v=0.1)
+        $ 66 "v_pick_offset≔pose_trans(Point_Place, p[0.0,0.0,v_place_z-((v_counter-1)*v_obj_height),0.0,0.0,0.0])"
+        global v_pick_offset=pose_trans(Point_Place_p, p[0.0,0.0,v_place_z-((v_counter-1)*v_obj_height),0.0,0.0,0.0])
+        $ 67 "v_pick_offset" "breakAfter"
+        movel(v_pick_offset, a=0.5, v=0.1)
+        $ 68 "Point_Place" "breakAfter"
+        movel(Point_Place_p, a=0.5, v=0.1)
+        $ 69 "Point_Pick" "breakAfter"
+        movel(Point_Pick_p, a=0.5, v=0.1)
+        $ 70 "v_place_offset≔pose_trans(Point_Pick, p[0.0,0.0,v_pick_z-((v_count_of_obj-v_counter)*v_obj_height),0.0,0.0,0.0])"
+        global v_place_offset=pose_trans(Point_Pick_p, p[0.0,0.0,v_pick_z-((v_count_of_obj-v_counter)*v_obj_height),0.0,0.0,0.0])
+        $ 71 "v_place_offset" "breakAfter"
+        movel(v_place_offset, a=0.5, v=0.1)
+        $ 72 "Point_Pick" "breakAfter"
+        movel(Point_Pick_p, a=0.5, v=0.1)
+        $ 73 "v_counter=v_counter-1"
+        v_counter=v_counter-1
+      else:
+        $ 74 "Else" "noBreak"
+        $ 75 "v_actual_state≔3"
+        global v_actual_state=3
+      end
+    end
+  end
+end

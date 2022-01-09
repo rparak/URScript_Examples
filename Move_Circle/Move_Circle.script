@@ -1,0 +1,56 @@
+def Move_Circle():
+  set_target_payload(0.000000, [0.000000, 0.000000, 0.000000], [0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000])
+  set_tcp(p[0.0,0.0,0.0,0.0,0.0,0.0])
+  step_count_523feb06_642e_4a80_808e_7727dbefabdb = 0.0
+  thread Step_Counter_Thread_78e91526_fd55_43b2_9460_00a061602707():
+    while (True):
+      step_count_523feb06_642e_4a80_808e_7727dbefabdb = step_count_523feb06_642e_4a80_808e_7727dbefabdb + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_78e91526_fd55_43b2_9460_00a061602707()
+  set_gravity([0.0, 0.0, 9.82])
+  set_safety_mode_transition_hardness(1)
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  global Waypoint_Home_p=p[.000027413165, -.700008089541, .307642439671, .068667031305, 3.139237750912, .000437121225]
+  global Waypoint_Home_q=[-1.3196121919157342, -1.756599685698049, -2.0634078196113883, -0.8922170360694253, 1.572415943754062, 0.2949248755915077]
+  $ 1 "BeforeStart"
+  $ 2 "MoveJ"
+  $ 3 "Waypoint_Home" "breakAfter"
+  movej(get_inverse_kin(Waypoint_Home_p, qnear=Waypoint_Home_q), a=1.3962634015954636, v=1.0471975511965976)
+  $ 4 "v_radius≔0.050"
+  global v_radius=0.050
+  $ 5 "v_point_1≔p[Waypoint_Home[0] + v_radius,Waypoint_Home[1],Waypoint_Home[2],Waypoint_Home[3],Waypoint_Home[4],Waypoint_Home[5]]"
+  global v_point_1=p[Waypoint_Home_p[0] + v_radius,Waypoint_Home_p[1],Waypoint_Home_p[2],Waypoint_Home_p[3],Waypoint_Home_p[4],Waypoint_Home_p[5]]
+  $ 6 "v_point_2≔p[Waypoint_Home[0],Waypoint_Home[1] + v_radius,Waypoint_Home[2],Waypoint_Home[3],Waypoint_Home[4],Waypoint_Home[5]]"
+  global v_point_2=p[Waypoint_Home_p[0],Waypoint_Home_p[1] + v_radius,Waypoint_Home_p[2],Waypoint_Home_p[3],Waypoint_Home_p[4],Waypoint_Home_p[5]]
+  $ 7 "v_point_3≔p[Waypoint_Home[0] - v_radius,Waypoint_Home[1],Waypoint_Home[2],Waypoint_Home[3],Waypoint_Home[4],Waypoint_Home[5]]"
+  global v_point_3=p[Waypoint_Home_p[0] - v_radius,Waypoint_Home_p[1],Waypoint_Home_p[2],Waypoint_Home_p[3],Waypoint_Home_p[4],Waypoint_Home_p[5]]
+  $ 8 "v_point_4≔p[Waypoint_Home[0],Waypoint_Home[1] - v_radius,Waypoint_Home[2],Waypoint_Home[3],Waypoint_Home[4],Waypoint_Home[5]]"
+  global v_point_4=p[Waypoint_Home_p[0],Waypoint_Home_p[1] - v_radius,Waypoint_Home_p[2],Waypoint_Home_p[3],Waypoint_Home_p[4],Waypoint_Home_p[5]]
+  while (True):
+    $ 9 "Robot Program"
+    $ 10 "MoveP"
+    $ 11 "v_point_1" "breakAfter"
+    movep(v_point_1, a=1.2, v=0.25, r=0.025)
+    $ 12 "CircleMove"
+    $ 13 "v_point_2" "noBreak"
+    $ 14 "v_point_3" "breakAfter"
+    movec(v_point_2, v_point_3, a=1.2, v=0.25, r=0.025)
+    $ 15 "CircleMove"
+    $ 16 "v_point_4" "noBreak"
+    $ 17 "v_point_1" "breakAfter"
+    movec(v_point_4, v_point_1, a=1.2, v=0.25, r=0.025)
+  end
+end

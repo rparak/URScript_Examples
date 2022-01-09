@@ -1,0 +1,18 @@
+ Program
+   BeforeStart
+     MoveJ
+       Waypoint_Home
+     v_radius≔0.050
+     v_point_1≔p[Waypoint_Home[0] + v_radius,Waypoint_Home[1],Waypoint_Home[2],Waypoint_Home[3],Waypoint_Home[4],Waypoint_Home[5]]
+     v_point_2≔p[Waypoint_Home[0],Waypoint_Home[1] + v_radius,Waypoint_Home[2],Waypoint_Home[3],Waypoint_Home[4],Waypoint_Home[5]]
+     v_point_3≔p[Waypoint_Home[0] - v_radius,Waypoint_Home[1],Waypoint_Home[2],Waypoint_Home[3],Waypoint_Home[4],Waypoint_Home[5]]
+     v_point_4≔p[Waypoint_Home[0],Waypoint_Home[1] - v_radius,Waypoint_Home[2],Waypoint_Home[3],Waypoint_Home[4],Waypoint_Home[5]]
+   Robot Program
+     MoveP
+       v_point_1
+       CircleMove
+         v_point_2
+         v_point_3
+       CircleMove
+         v_point_4
+         v_point_1
