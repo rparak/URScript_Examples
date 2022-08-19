@@ -1,4 +1,4 @@
-# URScript_Examples
+# Universal Robots (UR10e) - URScript Examples
 
 ## Requirements:
 
